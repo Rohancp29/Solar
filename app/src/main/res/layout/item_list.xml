@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="5dp"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/lightblue">
+
+
+    <!--image view for displaying user image-->
+    <ImageView
+        android:id="@+id/idIVUser"
+        android:src="@drawable/imagebackground"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <!--text view for displaying first name-->
+        <TextView
+            android:id="@+id/idTVName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/idIVUser"
+            android:layout_toRightOf="@id/idIVUser"
+            android:text="First Name"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <!--text view for displaying last name-->
+        <TextView
+            android:id="@+id/idTVEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            android:text="Email"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/idTVAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVEmail"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/idIVUser"
+            android:layout_toRightOf="@id/idIVUser"
+            android:text="Address"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/idTVPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTVAddress"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/idIVUser"
+            android:layout_toRightOf="@id/idIVUser"
+            android:text="Phone Number"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Home_Fragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/imageslider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:iss_period="1000"
+                app:iss_auto_cycle="true"
+                app:iss_corner_radius="10"
+                app:iss_delay="2000"
+                >
+            </com.denzcoskun.imageslider.ImageSlider>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingHorizontal="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/new_customer_reg"
+                        android:layout_width="250dp"
+                        android:layout_height="180dp"
+                        android:layout_marginVertical="20dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:clickable="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/card1"
+                            android:padding="10dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="New"
+                                android:layout_marginLeft="15dp"
+                                android:textSize="25sp"
+                                android:textColor="@color/white"
+                                android:textStyle="bold">
+                            </TextView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Customer Registrations"
+                                android:layout_marginLeft="30dp"
+                                android:textSize="18dp"
+                                android:textColor="@color/white">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/first_card"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginLeft="10dp"
+                                android:textColor="@color/white">
+                            </TextView>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/communication"
+                            android:layout_marginTop="70dp"
+                            android:layout_marginStart="150dp">
+                        </ImageView>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/your_customer_reg"
+                        android:clickable="true"
+                        android:layout_width="250dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginVertical="20dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            android:background="@drawable/card2"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Your"
+                                android:layout_marginLeft="15dp"
+                                android:textSize="25sp"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                >
+                            </TextView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Registered Customer"
+                                android:layout_marginLeft="30dp"
+                                android:textSize="18dp"
+                                android:textColor="@color/white"
+                                >
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:text="Check details of \nour customer \nmade by you"
+                                android:textColor="@color/white"/>
+
+
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/rating"
+                            android:layout_marginTop="70dp"
+                            android:layout_marginStart="150dp"
+                            >
+                        </ImageView>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/order_customer_reg"
+
+                        android:layout_width="250dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginVertical="20dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            android:background="@drawable/card3">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Order"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="15dp"
+                                android:textSize="25sp"
+                                android:textColor="@color/white"
+                                android:textStyle="bold">
+                            </TextView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Required Materials"
+                                android:layout_marginLeft="40dp"
+                                android:textSize="18dp"
+                                android:textColor="@color/white"
+                                >
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Place your required \nmaterial's orderh \nto Samrudhi store!"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/white">
+                            </TextView>
+
+
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:background="@drawable/order"
+                            android:layout_marginTop="80dp"
+                            android:layout_marginStart="150dp"
+                            >
+                        </ImageView>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@color/green">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visit to Samrudhi Store"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:elevation="20dp"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Framed by"
+                android:textSize="15dp"
+                android:textColor="@color/grey">
+            </TextView>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/heart"
+                android:gravity="center"
+                android:layout_marginHorizontal="3dp">
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" in Pune, India"
+                android:textSize="15dp"
+                android:textColor="@color/grey">
+            </TextView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "59682305503",
+    "project_id": "samrudhi-solar",
+    "storage_bucket": "samrudhi-solar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59682305503:android:cb799ef2ff43643eac006a",
+        "android_client_info": {
+          "package_name": "com.example.android.samrudhisolar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59682305503-psq0a1i0srmnve458h5mnbaf3irmkbtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDrBqcJ4rZhc5XqRdIuzonDbUPVvS2ctY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59682305503-psq0a1i0srmnve458h5mnbaf3irmkbtp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Samrudhi Solar</string>
+
+
+    <string name="delears_details">Dealers Details</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="mail">Email</string>
+    <string name="pass">Password</string>
+    <string name="join_now">Join now</string>
+    <string name="join_now1">Don\'t have an account? Join now</string>
+    <string name="reg_n">Register Now!</string>
+    <string name="s_reg">Register</string>
+    <string name="reg">REGISTER</string>
+    <string name="pre_login">Already have an account? </string>
+    <string name="login">LOGIN</string>
+    <string name="s_login">Login</string>
+    <string name="dlr_name">Dealers Name</string>
+    <string name="addr">Address</string>
+    <string name="pin">Pin Code</string>
+    <string name="m_no">Mobile No.</string>
+    <string name="cnf_pass">Confirm Password</string>
+    <string name="vld_code">Validation Code</string>
+    <string name="user_id">User ID</string>
+    <string name="to_samrudhi_solar">to Samrudhi Solar</string>
+    <string name="welcome">Welcome</string>
+    <string name="forget_pass">Forget Password</string>
+    <string name="first_card">Register your \nnew customer with \n<b>Samrudhi</b> fam!</string>
+
+
+    <!-- new Customer register activity -->
+    <string name="please_enter_details">Please \nEnter Details</string>
+    <string name="cust_full_name">Customer Full Name</string>
+    <string name="cust_mb_no">Customer Mobile no.</string>
+    <string name="cust_address">Customer Address</string>
+    <string name="cust_serial_no">Customer Serail no.</string>
+    <string name="cust_valid_code">Customer Validation Code</string>
+    <string name="choose_Device">Choose Device</string>
+    <string name="frp">FRP</string>
+    <string name="ss">SS</string>
+    <string name="gl">Gl</string>
+    <string name="solar_pump">Solar pump</string>
+    <string name="lpd">LPD</string>
+    <string name="hundred_l">100 L</string>
+    <string name="hundred_and_fifty_l">150 L</string>
+    <string name="two_hundred_l">200 L</string>
+    <string name="two_hundred_and_fifty_l">250 L</string>
+    <string name="three_hundred_l">300 L</string>
+    <string name="three_hundred_and_fifty_l">350 L</string>
+    <string name="cust_upload_photo">Upload Photo</string>
+
+
+</resources>
