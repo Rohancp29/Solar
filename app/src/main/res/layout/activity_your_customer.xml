@@ -10,54 +10,41 @@
 
     <TextView
         android:id="@+id/dealeridtv"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:hint="Dealer id"
-        android:textColor="@color/black"
-        android:layout_above="@+id/searchcustomeret"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="99dp"
+        android:hint="Dealer id"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/searchcustomeret"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@+id/dealeridtv"
+        android:layout_marginTop="31dp"
         android:hint="Enter Customer Name"
         android:textColor="@color/black"
-        android:layout_above="@+id/searchcunamebt"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="15dp" />
-
-    <Button
-        android:id="@+id/searchcunamebt"
-        android:text="search"
-        android:layout_width="229dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/recyclerviewcustomer"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="20dp" />
+        android:textColorHint="@color/black"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewcustomer"
         android:layout_width="377dp"
         android:layout_height="539dp"
-        android:background="@color/green"
+        android:layout_below="@+id/searchcustomeret"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
 
-      />
+        android:layout_marginTop="33dp"
+        android:background="@color/green" />
 
 
 </RelativeLayout>

@@ -52,7 +52,7 @@ public class Your_Customer extends AppCompatActivity {
        // list=new ArrayList<>();
         recyclerView=findViewById(R.id.recyclerviewcustomer);
         edph=findViewById(R.id.searchcustomeret);
-        secur=findViewById(R.id.searchcunamebt);
+     //   secur=findViewById(R.id.searchcunamebt);
         DealerID=findViewById(R.id.dealeridtv);
 
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
