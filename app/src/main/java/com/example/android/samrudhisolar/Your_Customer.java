@@ -1,15 +1,19 @@
 package com.example.android.samrudhisolar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -18,6 +22,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,44 +43,39 @@ public class Your_Customer extends AppCompatActivity {
     private CustomerAdapter adapter;
     private EditText edph;
     private Button secur;
+    private TextView DealerID;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_customer);
        // list=new ArrayList<>();
         recyclerView=findViewById(R.id.recyclerviewcustomer);
-        edph=findViewById(R.id.cuname);
-        secur=findViewById(R.id.secustomer);
-        /*secur.setOnClickListener(new View.OnClickListener() {
+        edph=findViewById(R.id.searchcustomeret);
+     //   secur=findViewById(R.id.searchcunamebt);
+        DealerID=findViewById(R.id.dealeridtv);
 
-            @SuppressLint("NotifyDataSetChanged")
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Your_Customer.this, "Siuuuuuuuuuuuuoooooooooooo", Toast.LENGTH_SHORT).show();
-                String ed=edph.getText().toString();
-                if(ed.length() == 10){
-                    ArrayList<CustomerModel> filteredList = new ArrayList<CustomerModel>();
-                    for(CustomerModel customerModel : list){
-                        if(customerModel.getPhonecu().equals(ed)){
-                            filteredList.add(customerModel);
-                        }
-                    }
-                    if (!filteredList.isEmpty()) {
-                        Toast.makeText(Your_Customer.this,"Response showing", Toast.LENGTH_SHORT).show();
-                        recyclerView.setAdapter(new CustomerAdapter(Your_Customer.this, filteredList));
-                       // adapter.notifyDataSetChanged();
-//                        adapter.setData(filteredList);
-//                        recyclerView.setAdapter(adapter);
-                    } else {
-                        Toast.makeText(Your_Customer.this, "No data found for the entered id", Toast.LENGTH_SHORT).show();
-                        adapter.setData(new ArrayList<>());
-                        adapter.notifyDataSetChanged();
-                    }
-                }else{
-                    Toast.makeText(Your_Customer.this, "Please enter a valid id", Toast.LENGTH_SHORT).show();
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentFirebaseUser != null) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference reference = database.getReference("Dealers").child(currentFirebaseUser.getUid());
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    DealerID.setText(snapshot.child("Validation code").getValue(String.class));
+
                 }
-            }
-        });*/
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        } else {
+            Toast.makeText(Your_Customer.this, "User is not logged in", Toast.LENGTH_SHORT).show();
+        }
+
+
         getData();
     }
 
@@ -96,41 +102,56 @@ public class Your_Customer extends AppCompatActivity {
                         String imagecu=object.getString("Photo");
 
                         list.add(new CustomerModel(dealerid,dealername,namecu,emailcu,addresscu,phonecu,imagecu,solarcapacity,systemserialno,dateofinstall));
-                        /*  search.setOnClickListener(new View.OnClickListener() {
+                        //recyclerView.setAdapter(new CustomerAdapter(Your_Customer.this,list));
 
-                            @SuppressLint("NotifyDataSetChanged")
-                            @Override
-                            public void onClick(View view) {
-                                Toast.makeText(Your_Customer.this, "Siuuuuuuuuuuuuoooooooooooo", Toast.LENGTH_SHORT).show();
-                                String ed=edph.getText().toString();
-                                if(ed.length() == 6){
-                                    ArrayList<CustomerModel> filteredList = new ArrayList<CustomerModel>();
-                                    for(CustomerModel customerModel : list){
-                                        if(customerModel.getDealerid().equals(ed)){
-                                            filteredList.add(customerModel);
-                                        }
+
+
+                    }
+                    edph.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                        }
+
+                        @Override
+                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+                            String dealerId = DealerID.getText().toString();
+                            List<CustomerModel> filteredList = new ArrayList<>();
+                            for (CustomerModel customer : list) {
+                                if (customer.getDealerid().equals(dealerId)) {
+                                    if (customer.getNamecu().toLowerCase().contains(s.toString().toLowerCase())) {
+                                        filteredList.add(customer);
                                     }
-                                    if (!filteredList.isEmpty()) {
-                                        Toast.makeText(Your_Customer.this,"Response showing", Toast.LENGTH_SHORT).show();
-                                        recyclerView.setAdapter(new CustomerAdapter(Your_Customer.this, filteredList));
-                                        adapter.notifyDataSetChanged();
-                                    } else {
-                                        Toast.makeText(Your_Customer.this, "No data found for the entered phone number", Toast.LENGTH_SHORT).show();
-                                        adapter.setData(new ArrayList<>());
-                                        adapter.notifyDataSetChanged();
-                                    }
-                                }else{
-                                    Toast.makeText(Your_Customer.this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
                                 }
                             }
-                        });*/
-//                        adapter=new MyAdapter(MainActivity.this,list);
-//
-//                        recyclerView.setHasFixedSize(true);
-//                        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-//                        recyclerView.setAdapter(adapter);
+                            recyclerView.setAdapter(new CustomerAdapter(Your_Customer.this, filteredList));
+                        }
 
+                        @Override
+                        public void afterTextChanged(Editable s) {
+                        }
+                    });
+                    String dealerId = DealerID.getText().toString();
+                    Toast.makeText(Your_Customer.this, "DDDDDDDD"+dealerId, Toast.LENGTH_SHORT).show();
 
+                    List<CustomerModel> filteredList = new ArrayList<>();
+                    for (CustomerModel customer : list) {
+                       // Toast.makeText(Your_Customer.this, "apidealer"+customer.getDealerid(), Toast.LENGTH_SHORT).show();
+                        if (customer.getDealerid().equals(dealerId)) {
+
+                            filteredList.add(customer);
+                        }
+
+                    }
+                    if(!filteredList.isEmpty()) {
+                        Toast.makeText(Your_Customer.this, "Data showing", Toast.LENGTH_SHORT).show();
+                        // Set the filtered list as the data source for the recycler view
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(Your_Customer.this));
+                        recyclerView.setAdapter(new CustomerAdapter(Your_Customer.this, filteredList));
+                        // adapter.notifyDataSetChanged();
+                    }
+                    else{
+                        Toast.makeText(Your_Customer.this, "No data found", Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -139,11 +160,9 @@ public class Your_Customer extends AppCompatActivity {
 
 
                 }
-                CustomerAdapter adapter= new CustomerAdapter(Your_Customer.this,list);
-                recyclerView.setLayoutManager(new LinearLayoutManager(Your_Customer.this));
-                recyclerView.setHasFixedSize(true);
-                recyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+
+
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -155,5 +174,9 @@ public class Your_Customer extends AppCompatActivity {
         );
         RequestQueue queue= Volley.newRequestQueue(this);
         queue.add(jsonObjectRequest);
+    }
+
+    private void filterData(List<CustomerModel> list) {
+
     }
 }

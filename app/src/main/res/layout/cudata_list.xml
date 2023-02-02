@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="180dp"
     android:orientation="horizontal"
     android:background="@color/neon_green">
     <!--image view for displaying user image-->
     <ImageView
         android:id="@+id/idIVcu"
-        android:src="@drawable/imagebackground"
+        android:src="@mipmap/ic_launcher"
         android:layout_width="120dp"
-        android:layout_height="120dp"
+
+        android:layout_height="150dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -17,7 +18,7 @@
         />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="131dp"
+        android:layout_height="170dp"
         android:layout_margin="8dp"
         android:orientation="vertical">
 
@@ -67,6 +68,15 @@
             android:textColor="@color/white"
             android:textSize="15sp"
             android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/idTVCUdateinstl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:text="Date of Installation"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
