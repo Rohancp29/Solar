@@ -8,49 +8,55 @@
     android:background="@color/white">
 
 
-    <EditText
-        android:id="@+id/cuname"
+    <TextView
+        android:id="@+id/dealeridtv"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
+        android:hint="Dealer id"
+        android:textColor="@color/black"
+        android:layout_above="@+id/searchcustomeret"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="22dp"
-        android:hint="Enter Your Personal ID"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="10dp" />
+
+    <EditText
+        android:id="@+id/searchcustomeret"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Customer Name"
         android:textColor="@color/black"
-        android:textColorHint="@color/black" />
-
-    <Button
-        android:id="@+id/secustomer"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-
-        android:layout_below="@+id/cuname"
-
+        android:layout_above="@+id/searchcunamebt"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="114dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="116dp"
-        android:background="@color/green"
-        android:text="Search"
-        android:textColor="@color/white" />
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="15dp" />
+
+    <Button
+        android:id="@+id/searchcunamebt"
+        android:text="search"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/recyclerviewcustomer"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="20dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewcustomer"
         android:layout_width="377dp"
         android:layout_height="539dp"
-android:background="@color/green"
-        android:layout_below="@+id/secustomer"
+        android:background="@color/green"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="10dp"
+
       />
 
 
